@@ -1,4 +1,4 @@
-package com.example.springcore;
+package com.example.springcore.models;
 
 import lombok.Getter;
 
