@@ -7,6 +7,7 @@ import com.example.springcore.models.ProductRequestDto;
 import java.sql.*;
 import java.util.List;
 
+// 아직은 스프링이 제공하는 @Service 사용 하지 않고 !!
 public class ProductService {
     public Product createProduct(ProductRequestDto requestDto) throws SQLException {
         // 요청받은 DTO 로 DB에 저장할 객체 만들기

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+// 아직은 스프링이 제공하는 @Repository 사용 하지 않고 !!
 public class ProductRepository {
 
 
