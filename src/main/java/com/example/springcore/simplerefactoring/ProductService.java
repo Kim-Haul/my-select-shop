@@ -19,6 +19,11 @@ public class ProductService {
     }
 
     public Product updateProduct(Long id, ProductMypriceRequestDto requestDto) throws SQLException {
+
+        if (requestDto.getMyprice() <= 0) {
+            throw new RuntimeException("희망 최저가는 0 이상으로 설정해주세요.");
+        }
+
         ProductRepository productRepository = new ProductRepository();
         Product product = productRepository.getProduct(id);
 
