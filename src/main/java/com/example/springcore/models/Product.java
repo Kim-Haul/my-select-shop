@@ -1,10 +1,9 @@
 package com.example.springcore.models;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import javax.persistence.*;
 
 @Setter
 @Getter // get 함수를 일괄적으로 만들어줍니다.
