@@ -13,8 +13,14 @@ public class ProductService {
     private final ProductRepository productRepository;
 
     // 생성자
-    public ProductService() {
-        ProductRepository productRepository = new ProductRepository();
+    //    public ProductService() {
+    //        // DI(의존성 주입) 사용하기 -> 강한결합 해결 필요.
+    //        ProductRepository productRepository = new ProductRepository();
+    //        this.productRepository = productRepository;
+    //    }
+
+    // 생성자를 이렇게.
+    public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 

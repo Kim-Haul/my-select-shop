@@ -16,10 +16,17 @@ public class ProductController {
     private final ProductService productService;
 
     // 생성자
-    public ProductController() {
-        ProductService productService = new ProductService();
-        this.productService = productService;
-    }
+    //    public ProductController() {
+    //        // DI(의존성 주입) 사용하기 -> 강한결합 해결 필요.
+    //        ProductService productService = new ProductService();
+    //        this.productService = productService;
+    //    }
+
+    //  생성자를 이렇게.
+    //  DI 란 미리 만들어져있는 객체를 이렇게 가져다가 쓰는 것. (ProductService productService) 이 부분.
+        public ProductController(ProductService productService) {
+            this.productService = productService;
+        }
 
     // 신규 상품 등록
     @PostMapping("/api/products")
