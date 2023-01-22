@@ -3,11 +3,13 @@ package com.example.springcore.simplerefactoring;
 import com.example.springcore.models.Product;
 import com.example.springcore.models.ProductMypriceRequestDto;
 import com.example.springcore.models.ProductRequestDto;
+import org.springframework.stereotype.Component;
 
 import java.sql.*;
 import java.util.List;
 
 // 아직은 스프링이 제공하는 @Service 사용 하지 않고 !!
+@Component // 이렇게만 설정해주면, 스프링이 알아서 ProductService 를 new 로 만들어서 IoC 컨테이너 안에 담아두고 bean 으로 생성해서 관리
 public class ProductService {
 
     private final ProductRepository productRepository;

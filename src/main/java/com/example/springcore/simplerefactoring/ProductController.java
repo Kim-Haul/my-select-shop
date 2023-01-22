@@ -4,13 +4,14 @@ import com.example.springcore.models.Product;
 import com.example.springcore.models.ProductMypriceRequestDto;
 import com.example.springcore.models.ProductRequestDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.*;
 import java.util.List;
 
-@RequiredArgsConstructor // final로 선언된 멤버 변수를 자동으로 생성합니다.
-@RestController // JSON으로 데이터를 주고받음을 선언합니다.
+// @RequiredArgsConstructor // final로  선언된 멤버 변수를 자동으로 생성(생성자)합니다.
+@RestController // JSON 으로 데이터를 주고받음을 선언합니다.
 public class ProductController {
 
     private final ProductService productService;
@@ -24,6 +25,7 @@ public class ProductController {
 
     //  생성자를 이렇게.
     //  DI 란 미리 만들어져있는 객체를 이렇게 가져다가 쓰는 것. (ProductService productService) 이 부분.
+        @Autowired // productService 에 대한 DI 가 필요하면 어노테이션 추가 (ProductController 에 대한 생성자가 1개일 때는, 생략 가능)
         public ProductController(ProductService productService) {
             this.productService = productService;
         }
